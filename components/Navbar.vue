@@ -4,6 +4,8 @@
     <nuxt-link to="/async-posts">Async Posts</nuxt-link>
     <nuxt-link to="/async-posts-axios">Async Posts Axios</nuxt-link>
     <nuxt-link to="/fetch">Fetch Posts</nuxt-link>
+    <nuxt-link to="/wp-posts">WP Posts</nuxt-link>
+    <nuxt-link to="/test-login">Test Login</nuxt-link>
     <nuxt-link to="/login">Login</nuxt-link>
   </nav>
 </template>

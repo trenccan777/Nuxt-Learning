@@ -1,11 +1,44 @@
 <template>
-  <div class="container">
-    <h1>Toto je login page</h1>
+  <div>
+    <form @submit="userLogin">
+      <div>
+        <label>Username</label>
+        <input v-model="login.username" type="text" />
+      </div>
+      <div>
+        <label>Password</label>
+        <input v-model="login.password" type="text" />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
-export default {}
-</script>
+export default {
+  data() {
+    return {
+      login: {
+        username: 'nuxt',
+        password: 'nuxt'
+      }
+    }
+  },
+  methods: {
+    async userLogin(e) {
+      e.preventDefault()
 
-<style></style>
+      try {
+        const response = await this.$auth.loginWith('local', {
+          data: this.login
+        })
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
+}
+</script>

@@ -40,7 +40,8 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
   /*
    ** Axios module configuration
@@ -64,6 +65,22 @@ export default {
           fix: true
         }
       })
+    }
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          //property name is necessary to set to the response
+          login: { url: 'http://127.0.0.1/web/wp-json/jwt-auth/v1/token', method: 'post', propertyName: 'data.token' },
+          logout: { url: '/logout', method: 'post' },
+          user: { url: 'http://127.0.0.1/web/wp-json/wp/v2/users/me', method: 'get', propertyName: '' }
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer',
+        // globalToken: true,
+        // autoFetchUser: true
+      }
     }
   }
 }

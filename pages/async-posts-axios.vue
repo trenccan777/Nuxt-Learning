@@ -2,16 +2,16 @@
   <div class="container">
     <h1>Všetky články cez AsyncData a Axios</h1>
     <ul>
-      <Post v-for="post in posts" :key="post.id" :post="post" />
+      <PostExcerpt v-for="post in posts" :key="post.id" :post="post" />
     </ul>
   </div>
 </template>
 
 <script>
-import Post from '~/components/Post.vue'
+import PostExcerpt from '~/components/PostExcerpt.vue'
 export default {
   components: {
-    Post
+    PostExcerpt
   },
 
   async asyncData({ $axios }) {
@@ -20,18 +20,6 @@ export default {
     )
     return {
       posts: response
-    }
-  },
-
-  data() {
-    return {
-      postid: 'testuj',
-      response: '',
-      posts: [
-        { id: 1, title: 'title 1' },
-        { id: 2, title: 'title 2' },
-        { id: 3, title: 'title 3' }
-      ]
     }
   }
 }
