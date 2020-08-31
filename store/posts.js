@@ -25,7 +25,14 @@ export const actions = {
     const data = {
       title: 'axios',
       content: 'test',
-      status: 'draft'
+      status: 'publish',
+      categories: '2', // Pri viacerých kategóriách je to tiež string s id oddelenými čiarkami
+      meta: {
+        metainfo: 'toto je meta nova',
+        metadesc: 'toto je meta dva'
+      },
+      // Takto môžem registrovať ACF fields, alebo meno autora
+      custom_rest_field: 'nejake data z custom rest field'
     }
 
     this.$axios.setHeader('Content-Type', 'application/json')
