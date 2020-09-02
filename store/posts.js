@@ -38,10 +38,7 @@ export const actions = {
     this.$axios.setHeader('Content-Type', 'application/json')
     this.$axios.setHeader('accept', 'application/json')
     this.$axios.setHeader('Authorization', token)
-    const response = await this.$axios.post(
-      'http://127.0.0.1/web/wp-json/wp/v2/posts',
-      data
-    )
+    const response = await this.$axios.post('/posts', data)
 
     console.log(response)
   },
@@ -74,22 +71,16 @@ export const actions = {
     context.commit('LOAD_ALL_WP_POSTS', response)
   },
   async loadAllPostsBtnAxios(context) {
-    const response = await this.$axios.get(
-      'http://127.0.0.1/web/wp-json/wp/v2/posts'
-    )
+    const response = await this.$axios.get('/posts')
     context.commit('LOAD_ALL_WP_POSTS', response.data)
   },
   async loadAllPosts({ commit }) {
-    const response = await this.$axios.get(
-      'http://127.0.0.1/web/wp-json/wp/v2/posts'
-    )
+    const response = await this.$axios.get('/posts')
 
     commit('LOAD_ALL_WP_POSTS', response.data)
   },
   async filterPostsAuthor({ commit }, data) {
-    const response = await this.$axios.get(
-      'http://127.0.0.1/web/wp-json/wp/v2/posts?author=' + data
-    )
+    const response = await this.$axios.get('/posts?author=' + data)
 
     commit('LOAD_ALL_WP_POSTS', response.data)
   }

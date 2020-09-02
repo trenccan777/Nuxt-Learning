@@ -28,7 +28,7 @@ export default {
       const img = document.getElementById('wpimage')
       formData.append('file', img.files[0])
 
-      fetch('http://192.168.152.16/intranet/wp-json/wp/v2/media', {
+      fetch('http://192.168.99.100/web/wp-json/wp/v2/media', {
         method: 'POST',
         headers: {
           Authorization: token
