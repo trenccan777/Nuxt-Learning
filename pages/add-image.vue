@@ -15,6 +15,9 @@ export default {
 
       const formData = new FormData()
       const img = document.getElementById('wpimage')
+      formData.append('title', 'toto je title')
+      formData.append('caption', 'toto je caption')
+      formData.append('post', 28)
       formData.append('file', img.files[0])
 
       this.$axios.setHeader('Authorization', token)
@@ -26,6 +29,8 @@ export default {
       const token = localStorage.getItem('auth._token.local')
       const formData = new FormData()
       const img = document.getElementById('wpimage')
+      formData.append('title', 'toto je title')
+      formData.append('caption', 'toto je caption')
       formData.append('file', img.files[0])
 
       fetch('http://192.168.99.100/web/wp-json/wp/v2/media', {
