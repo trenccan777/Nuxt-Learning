@@ -23,7 +23,7 @@ export default {
       this.$axios.setHeader('Authorization', token)
 
       const response = await this.$axios.post('/media', formData)
-      console.log(response)
+      return response
     },
     addImageFetch() {
       const token = localStorage.getItem('auth._token.local')
@@ -44,7 +44,7 @@ export default {
           return response.json()
         })
         .then((data) => {
-          console.log(data)
+          return data
         })
     }
   }

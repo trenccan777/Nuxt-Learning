@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>{{ getPost.title.rendered }}</h1>
+    <h1>{{ getPost.title }}</h1>
 
     <div class="content"></div>
   </div>
@@ -8,17 +8,8 @@
 
 <script>
 export default {
-  // async asyncData({ $axios, params }) {
-  //   const response = await $axios.$get(
-  //     'http://127.0.0.1/web/wp-json/wp/v2/posts/' + params.id
-  //   )
-
-  //   return {
-  //     post: response
-  //   }
-  // },
   async fetch() {
-    await this.$store.dispatch('posts/loadSinglePost')
+    await this.$store.dispatch('posts/loadSinglePost', this.$route.params.id)
   },
   data() {
     return {

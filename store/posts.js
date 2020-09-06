@@ -39,7 +39,7 @@ export const actions = {
     this.$axios.setHeader('accept', 'application/json')
     this.$axios.setHeader('Authorization', token)
     const response = await this.$axios.post('/posts', data)
-    console.log(response)
+    return response
   },
   addFetchPost(context, data) {
     const token = localStorage.getItem('auth._token.local')
@@ -85,10 +85,11 @@ export const actions = {
 
     commit('LOAD_ALL_WP_POSTS', response.data)
   },
-  async loadSinglePost(context) {
+  async loadSinglePost(context, postid) {
     // Treba doplnit ziskanie param id do Vuex
-
-    const data = await fetch('http://127.0.0.1/web/wp-json/wp/v2/posts/173')
+    const data = await fetch(
+      'http://127.0.0.1/web/wp-json/wp/v2/posts/' + postid
+    )
     const response = await data.json()
 
     context.commit('LOAD_ALL_WP_POSTS', response)

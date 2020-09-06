@@ -7,7 +7,9 @@
       class="post-excerpt"
     >
       <h4>
-        <a :href="`/clanok/${post.id}`">{{ post.title.rendered }}</a>
+        <nuxt-link :to="`/clanok/${post.id}`">{{
+          post.title.rendered
+        }}</nuxt-link>
       </h4>
 
       <b-card-text>
