@@ -41,14 +41,16 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    'bootstrap-vue/nuxt'
   ],
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://192.168.99.100/web/wp-json/wp/v2/'
+    baseURL: 'http://127.0.0.1/web/wp-json/wp/v2/'
   },
   /*
    ** Build configuration
@@ -74,9 +76,9 @@ export default {
       local: {
         endpoints: {
           //property name is necessary to set to the response
-          login: { url: 'http://192.168.99.100/web/wp-json/jwt-auth/v1/token', method: 'post', propertyName: 'data.token' },
+          login: { url: 'http://127.0.0.1/web/wp-json/jwt-auth/v1/token', method: 'post', propertyName: 'data.token' },
           logout: { url: '/logout', method: 'post' },
-          user: { url: 'http://192.168.99.100/web/wp-json/wp/v2/users/me', method: 'get', propertyName: '' }
+          user: { url: 'http://127.0.0.1/web/wp-json/wp/v2/users/me', method: 'get', propertyName: '' }
         },
         // tokenRequired: true,
         // tokenType: 'bearer',

@@ -39,7 +39,6 @@ export const actions = {
     this.$axios.setHeader('accept', 'application/json')
     this.$axios.setHeader('Authorization', token)
     const response = await this.$axios.post('/posts', data)
-
     console.log(response)
   },
   addFetchPost(context, data) {
@@ -68,10 +67,12 @@ export const actions = {
   async loadAllPostsBtn(context) {
     const data = await fetch('http://127.0.0.1/web/wp-json/wp/v2/posts')
     const response = await data.json()
+
     context.commit('LOAD_ALL_WP_POSTS', response)
   },
   async loadAllPostsBtnAxios(context) {
     const response = await this.$axios.get('/posts')
+
     context.commit('LOAD_ALL_WP_POSTS', response.data)
   },
   async loadAllPosts({ commit }) {
@@ -83,5 +84,13 @@ export const actions = {
     const response = await this.$axios.get('/posts?author=' + data)
 
     commit('LOAD_ALL_WP_POSTS', response.data)
+  },
+  async loadSinglePost(context) {
+    // Treba doplnit ziskanie param id do Vuex
+
+    const data = await fetch('http://127.0.0.1/web/wp-json/wp/v2/posts/173')
+    const response = await data.json()
+
+    context.commit('LOAD_ALL_WP_POSTS', response)
   }
 }
