@@ -4,15 +4,15 @@
       <b-navbar-brand to="/">Home</b-navbar-brand>
       <b-navbar-nav left>
         <b-nav-item-dropdown text="Wordpress data" left>
-          <b-dropdown-item to="wp-posts">Wordpress Posts</b-dropdown-item>
-          <b-dropdown-item to="add-image">Add Image</b-dropdown-item>
+          <b-dropdown-item to="/wp-posts">Wordpress Posts</b-dropdown-item>
+          <b-dropdown-item to="/add-image">Add Image</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Post from JSON placeholder" right>
-          <b-dropdown-item to="async-posts">Async Posts</b-dropdown-item>
-          <b-dropdown-item to="async-posts-axios"
+          <b-dropdown-item to="/async-posts">Async Posts</b-dropdown-item>
+          <b-dropdown-item to="/async-posts-axios"
             >Async Posts Axios</b-dropdown-item
           >
-          <b-dropdown-item to="fetch">Fetch Posts</b-dropdown-item>
+          <b-dropdown-item to="/fetch">Fetch Posts</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
       <!-- Right aligned nav items -->
