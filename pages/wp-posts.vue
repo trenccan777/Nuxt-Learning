@@ -61,7 +61,7 @@ export default {
       return this.$store.state.posts.posts
     },
     getAllRows() {
-      const AllPosts = this.$store.state.posts.posts
+      const AllPosts = this.getAllPosts
       const itemsPerRow = 2
       const rowsArr = []
       let rowArr = []

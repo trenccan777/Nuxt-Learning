@@ -21,8 +21,8 @@ export default {
   data() {
     return {
       login: {
-        username: 'nuxt',
-        password: 'nuxt'
+        username: '',
+        password: ''
       }
     }
   },
