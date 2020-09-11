@@ -48,7 +48,7 @@ export const actions = {
       return
     }
 
-    fetch('http://127.0.0.1/web/wp-json/wp/v2/posts', {
+    fetch('https://wp-rest.foxili.sk/web/wp-json/wp/v2/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +65,9 @@ export const actions = {
     })
   },
   async loadAllPostsBtn(context) {
-    const data = await fetch('http://127.0.0.1/web/wp-json/wp/v2/posts')
+    const data = await fetch(
+      'https://wp-rest.foxili.sk/web/wp-json/wp/v2/posts'
+    )
     const response = await data.json()
 
     context.commit('LOAD_ALL_WP_POSTS', response)
@@ -88,7 +90,7 @@ export const actions = {
   async loadSinglePost(context, postid) {
     // Treba doplnit ziskanie param id do Vuex
     const data = await fetch(
-      'http://127.0.0.1/web/wp-json/wp/v2/posts/' + postid
+      'https://wp-rest.foxili.sk/web/wp-json/wp/v2/posts/' + postid
     )
     const response = await data.json()
 

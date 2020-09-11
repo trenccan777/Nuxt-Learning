@@ -33,7 +33,7 @@ export default {
       formData.append('caption', 'toto je caption')
       formData.append('file', img.files[0])
 
-      fetch('http://192.168.99.100/web/wp-json/wp/v2/media', {
+      fetch('https://wp-rest.foxili.sk/web/wp-json/wp/v2/media', {
         method: 'POST',
         headers: {
           Authorization: token

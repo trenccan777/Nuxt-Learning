@@ -50,7 +50,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://127.0.0.1/web/wp-json/wp/v2/'
+    baseURL: 'https://wp-rest.foxili.sk/web/wp-json/wp/v2/'
   },
   /*
    ** Build configuration
@@ -76,9 +76,9 @@ export default {
       local: {
         endpoints: {
           //property name is necessary to set to the response
-          login: { url: 'http://127.0.0.1/web/wp-json/jwt-auth/v1/token', method: 'post', propertyName: 'data.token' },
+          login: { url: 'https://wp-rest.foxili.sk/web/wp-json/jwt-auth/v1/token', method: 'post', propertyName: 'data.token' },
           logout: { url: '/logout', method: 'post' },
-          user: { url: 'http://127.0.0.1/web/wp-json/wp/v2/users/me', method: 'get', propertyName: '' }
+          user: { url: 'https://wp-rest.foxili.sk/web/wp-json/wp/v2/users/me', method: 'get', propertyName: '' }
         },
         // tokenRequired: true,
         // tokenType: 'bearer',
