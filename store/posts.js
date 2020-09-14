@@ -1,5 +1,6 @@
 export const state = () => ({
-  posts: []
+  posts: [],
+  post: []
 })
 
 export const mutations = {
@@ -8,6 +9,9 @@ export const mutations = {
   },
   LOAD_ALL_WP_POSTS(state, data) {
     state.posts = data
+  },
+  LOAD_SINGLE_WP_POST(state, data) {
+    state.post = data
   },
   REMOVE_ALL_POSTS(state) {
     state.posts = []
@@ -94,6 +98,6 @@ export const actions = {
     )
     const response = await data.json()
 
-    context.commit('LOAD_ALL_WP_POSTS', response)
+    context.commit('LOAD_SINGLE_WP_POST', response)
   }
 }

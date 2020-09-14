@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     getPost() {
-      return this.$store.state.posts.posts
+      return this.$store.state.posts.post
     }
   },
   head() {
