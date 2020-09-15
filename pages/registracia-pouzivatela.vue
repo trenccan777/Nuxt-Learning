@@ -28,7 +28,6 @@ export default {
   methods: {
     async userRegistration(e) {
       e.preventDefault()
-      const token = localStorage.getItem('auth._token.local')
 
       const data = {
         username: this.registration.username,
@@ -38,9 +37,9 @@ export default {
 
       this.$axios.setHeader('Content-Type', 'application/json')
       this.$axios.setHeader('accept', 'application/json')
-      this.$axios.setHeader('Authorization', token)
 
       const response = await this.$axios.post('/users', data)
+      console.log(response)
       return response
     }
   }
